@@ -19,10 +19,12 @@ function makeGrid() {
         for (let j = 1; j <= gridWidth; j++) {
             let gridCell = document.createElement('td');
             gridRow.appendChild(gridCell);
-            // Fills in cell with selected color when mouse click
+            // Fills in cell with selected color when mouse click and we added verification mechanism to check if the clicked element is a TD 
             gridCell.addEventListener('click', function() {
-                const color = document.getElementById('colorPicker').value;
-                this.style.backgroundColor = color;
+                if (event.target.nodeName === 'TD') {
+                  const color = document.getElementById('colorPicker').value;
+                  this.style.backgroundColor = color;
+                }
             })
         }
     }
