@@ -2,15 +2,17 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Dscription](#description)
+* [How to](#howto)
 * [Contributing](#contributing)
 
-## Instructions
+## Description
 
-To get started, open `designs.js` and start building out the app's functionality.
+This is Project 3: Pixel Art Maker - 3rd project for Intro to Programming Nanodegree in [Udacity Classroom](https://classroom.udacity.com/me) 
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## Howto
+
+Open index.html in browser (tested in Google Chrome), select Height & Width (maximum is 50x50 grid size) and hit submit button. then you can pick any color you likes and start creating some Art:) when you want to clear grid out, just hit submit button again and it will create new empty grid.
 
 ## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is the code for Udacity students. Therefore, we most likely will not accept pull requests.

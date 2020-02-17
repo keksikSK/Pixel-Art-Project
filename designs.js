@@ -1,35 +1,34 @@
-// Select color input
-// Select size input
-const size = document.getElementById('sizePicker');
-const table = document.getElementById('pixelCanvas');
-const color = document.getElementById('colorPicker');
+// we are storing size, color and grid in variables using querrySelector method on particular ID's
+const size = document.querySelector('#sizePicker');
+const table = document.querySelector('#pixelCanvas');
+const color = document.querySelector('#colorPicker');
 
-// When size is submitted by the user, call makeGrid()
-
+// Grid will appear when width and height is submitted.
 function makeGrid() {
-   // Your code goes here!
-   let gridHeight = document.getElementById('inputHeight').value;
-   let gridWidth = document.getElementById('inputWidth').value;
-   while (table.firstChild) {
-    table.removeChild(table.firstChild);
+    let gridHeight = document.querySelector('#inputHeight').value;
+    let gridWidth = document.querySelector('#inputWidth').value;
+    //removing old Grid if exist
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
     }
-  // Creates rows
-  for (let i = 1; i <= gridHeight; i++) {
-    let gridRow = document.createElement('tr');
-    table.appendChild(gridRow);
-  // Creates cells  
-    for (let j = 1; j <= gridWidth; j++) {
-      let gridCell = document.createElement('td');
-      gridRow.appendChild(gridCell);
-      // Fills in cell with selected color when mouse click
-      gridCell.addEventListener('click', function() {
-        const color = document.getElementById('colorPicker').value;
-        this.style.backgroundColor = color;
-      })
+    // Creates rows
+    for (let i = 1; i <= gridHeight; i++) {
+        let gridRow = document.createElement('tr');
+        table.appendChild(gridRow);
+        // Creates cells  
+        for (let j = 1; j <= gridWidth; j++) {
+            let gridCell = document.createElement('td');
+            gridRow.appendChild(gridCell);
+            // Fills in cell with selected color when mouse click
+            gridCell.addEventListener('click', function() {
+                const color = document.getElementById('colorPicker').value;
+                this.style.backgroundColor = color;
+            })
+        }
     }
-  }
 }
+//listening for submit button being hit, when it happen, it prevent any default function and use makeGrid() instead
 size.addEventListener('submit', function(event) {
     event.preventDefault();
     makeGrid();
-  });  
+});
